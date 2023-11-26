@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from .models import Contact, Profile
+from .models import Contact, Person
 from .serializers import PersonSerializer, ContactSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
