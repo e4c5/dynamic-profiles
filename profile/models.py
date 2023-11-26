@@ -1,7 +1,7 @@
 from django.db import models
 from countries.models import Country
 
-class Profile(models.Model):
+class Person(models.Model):
     id = models.AutoField(primary_key=True)
     gender_choices = [('M','MALE'),('F','FEMALE'), ('U','UNSPECIFIED')]
     national_id =  models.CharField(max_length=16)
@@ -23,7 +23,7 @@ class Profile(models.Model):
 
 class Contact(models.Model):
     id = models.AutoField(primary_key=True)
-    profile = models.OneToOneField(Profile, null=False, blank=False, on_delete=models.PROTECT)
+    profile = models.OneToOneField(Person, null=False, blank=False, on_delete=models.PROTECT)
     email = models.EmailField()
     phone = models.CharField(max_length=32)
     address1 = models.CharField(max_length=64)
